@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rion{width:100px; position: absolute; left: 50%; top:50%;}
+        *{list-style: none; margin:0; padding:0;}
+        .slide {width:980px; height: 390px;overflow: hidden;}
+        .slide img{width:980px; height: 390px; margin:0; padding:0;}
+        .slide ul {width:3980px; background-color: #fff; }
+        .slide ul li{float:left; width:980px; height: 390px;}
+    </style>
+</head>
+<body>
+    <img src="dancing_rion.gif" id="rion"/> 
+
+        <div class="slide">
+            <ul>
+                <li><a href="#"><img src="img/slide4.jpg"></a></li>
+                <li><a href="#"><img src="img/slide6.jpg"></a></li>
+                <li><a href="#"><img src="img/slide5.jpg"></a></li>
+                <li><a href="#"><img src="img/slide7.jpg"></a></li>
+            </ul>
+        </div>
+
+
+
+
+    <script>
+        var toggle ="off";
+
+        rion.onclick = function() {
+            if(toggle == "off"){
+                rion.setAttribute("src", "rion2.gif");
+                toggle = "on";
+            }else{
+                rion.setAttribute("src", "dancing_rion.gif");
+                toggle = "off";
+            }
+        }
+
+    </script>
+</body>
+</html>

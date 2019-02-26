@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>이건 슬라이더</title>
+    <style>
+        *{margin:0 ; padding: 0; list-style:none;}
+        img{width:100%;}
+        .dots{width:20px; height: 20px; background-color: black; border-radius: 50%;}
+        .active{background-color: red;}
+        .slider ul{
+            transition: all 0.5s ease-in-out;
+        }
+        .slider{position: relative;}
+        .arrow{
+            position: absolute;left:0; top:0;
+        }
+        .slider li{display:none; }
+        .slider .on{display:block;}
+        
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <div class="container">
+            <div class="slider">
+                <h3 class="li-title"></h3>
+                <ul>
+                    <li data-title="1"><a href="#"><img src="img/img.jpg" alt=""><span></span></a></li>
+                    <li data-title="2"><a href="#"><img src="img/img2.jpg" alt=""><span></span></a></li>
+                    <li data-title="3"><a href="#"><img src="img/img3.jpg" alt=""><span></span></a></li>
+                    <li data-title="4"><a href="#"><img src="img/img4.jpg" alt=""><span></span></a></li>
+                    <li data-title="5"><a href="#"><img src="img/img5.jpg" alt=""><span></span></a></li>
+                </ul>
+                <div class="arrow">
+                    <div class="leftArrow">왼쪽</div>
+                    <div class="rightArrow">오른쪽</div>
+                </div>
+            </div>
+            <div id="dot"></div>
+        </div>
+    </div>
+    <script src="slider3.js"></script>
+</body>
+</html>

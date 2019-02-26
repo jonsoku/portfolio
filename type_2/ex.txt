@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="KIMSCHOOL">
+    <meta name="description" content="KIMSCHOOL OFFICIAL SITE">
+    <meta name="keywords" content="일본취업, it, java, php, css, html, javascript">
+    <title>반응형 웹 템플릿</title>
+    <!--style-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/ex2.css">
+    <!--slider-->
+    <link rel="stylesheet" href="assets/css/main-slider.css">
+    <!--lightgallery-->
+    <link rel="stylesheet" href="assets/css/lightgallery.css">
+    <!--awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!--HTML5Shiv 호환성검사-->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    <!-- IEchecker -->
+    <script src="assets/js/ie-checker-min.js"></script>
+    <!--favicon & icon -->
+
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header">
+            <div class="top-logo">
+                <img src="assets/img/LINEat_logotype_White.png">
+            </div>
+            <div class="quick">
+                <ul>
+                    <li><a href="#">홈으로</a></li>
+                    <li><a href="#">학원소개</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">질문답변</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i></a></li>                    
+                </ul>
+            </div>
+            </div>
+        </div>
+    </header>
+    
+    <main id="contents">
+        <div class="container">
+            <section id="cont-top">
+                <h2 class="blind">1</h1>
+                <article class="cbox column1">
+                    <h3 class="cbox-tit blind">1-1</h4>
+                    <p class="cbox-desc blind">1-1 김스쿨 홈페이지 메인슬라이드</p>
+                    <!--main-slide-->
+                    <div class="main-slide">
+                        <div class="slides fade">
+                            <div class="number">1 / 4</div>
+                            <div id="slider1"><img src="assets/img/slider/slider1.jpg"></div>
+                            <div class="text">Caption 1</div>
+                        </div>
+                        <div class="slides fade">
+                            <div class="number">2 / 4</div>
+                            <div id="slider2"><img src="assets/img/slider/slider2.jpg"></div>
+                            <div class="text">Caption 2</div>
+                        </div>
+                        <div class="slides fade">
+                            <div class="number">3 / 4</div>
+                            <div id="slider3"><img src="assets/img/slider/slider3.jpg"></div>
+                            <div class="text">Caption 3</div>
+                        </div>
+                        <div class="slides fade">
+                            <div class="number">4 / 4</div>
+                            <div id="slider4"><img src="assets/img/slider/slider4.jpg"></div>
+                            <div class="text">Caption 4</div>
+                        </div>
+                        <a class="prev" onclick="plusIndex(-1)">&#10094;</a>
+                        <a class="next" onclick="plusIndex(+1)">&#10095;</a>
+                        <div class="dots_id">
+                            <span class="dots" onclick="currentSlide(1)"></span>
+                            <span class="dots" onclick="currentSlide(2)"></span>
+                            <span class="dots" onclick="currentSlide(3)"></span>
+                            <span class="dots" onclick="currentSlide(4)"></span>
+                        </div>
+                    </div>
+                    <!--//main-slide-->
+                </article>
+                <article class="cbox column2">
+                    <h3 class="blind">1-2</h3>
+                    <h3 class="cbox-tit blind">1-2</h4>
+                    <p class="cbox-desc blind">1-2 김스쿨 홈페이지 공지사항</p>
+                    <!--notice-->
+                    <div class="notice">
+                        notice
+                    </div>
+                    <!--//notice-->
+                </article>
+            </section>
+            <section id="cont-middle">
+                <h2 class="blind">2</h1>
+                <article class="cbox column3">
+                    <h3 class="blind">2-1</h3>
+                    <h3 class="cbox-tit blind">2-1</h4>
+                    <p class="cbox-desc blind">2-1 김스쿨 홈페이지 게시판</p>
+                    <!--board-->
+                    <div class="board">
+                        board
+                    </div>
+                    <!--//board-->
+                </article>
+                <article class="cbox column4">
+                    <h3 class="blind">2-2</h3>
+                    <h3 class="cbox-tit blind">2-2</h4>
+                    <p class="cbox-desc blind">2-2 김스쿨 홈페이지 갤러리</p>
+                    <!--gallery-->
+                    <div class="gallery">
+                        gallery
+                    </div>
+                    <!--//gallery-->
+                </article>
+            </section>
+            <section id="cont-bottom">
+                <h2 class="blind">3</h1>
+                <article class="cbox column5">
+                    <h3 class="cbox-tit blind">3-1</h4>
+                    <p class="cbox-desc blind">3-1 김스쿨 홈페이지 about</p>
+                    <!--about-->
+                    <div class="about">
+                        about
+                    </div>
+                    <!--//about-->
+                </article>
+                <article class="cbox column6">
+                    <h3 class="cbox-tit blind">3-2</h4>
+                    <p class="cbox-desc blind">3-2 김스쿨 홈페이지 배너</p>
+                    <!--banner-->
+                    <div class="banner">
+                        banner
+                    </div>
+                    <!--//banner-->
+                </article>
+            </section>
+        </div>
+    </main>
+    
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer">
+                   <!--ul>li*7>a[href="#"]-->
+                   <ul>
+                       <li><a href="#">사이트 도움말</a></li>
+                       <li><a href="#">사이트 이용약관</a></li>
+                       <li><a href="#">사이트 운영원칙</a></li>
+                       <li><a href="#"><strong>개인정보취급방침</strong></a></li>
+                       <li><a href="#">책임의 한계와 법적고지</a></li>
+                       <li><a href="#">게시중단 요청서비스</a></li>
+                       <li><a href="#">고객센터</a></li>
+                   </ul>
+                   <address>
+                        <em>Copyright &copy;
+                        <a href="#"><strong>KIMSCHOOL</strong></a>
+                        All rights reserved.</em>
+                   </address>
+                </div>
+                <!--//.footer-->
+            </div>
+        </div>
+    </footer>
+
+
+
+
+   
+
+
+
+    
+   
+   
+   
+    <!--Script-->
+    <script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/main-slider.js"></script>
+</body>
+</html>

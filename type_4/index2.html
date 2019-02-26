@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="KIMSCHOOL">
+    <meta name="description" content="KIMSCHOOL OFFICIAL SITE">
+    <meta name="keywords" content="일본취업, it, java, php, css, html, javascript">
+    <title>반응형 웹 템플릿</title>
+    <!--style-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/ex.css">
+    <!--slider-->
+    <link rel="stylesheet" href="assets/css/main-slider.css">
+    <!--lightgallery-->
+    <link rel="stylesheet" href="assets/css/lightgallery.css">
+    <!--awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!--HTML5Shiv 호환성검사-->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    <!-- IEchecker -->
+    <script src="assets/js/ie-checker-min.js"></script>
+    <!--favicon & icon -->
+
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header">
+            <div class="top-logo">
+                <img src="assets/img/LINEat_logotype_White.png">
+            </div>
+            <div class="quick">
+                <ul>
+                    <li><a href="#">홈으로</a></li>
+                    <li><a href="#">학원소개</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">질문답변</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i></a></li>                    
+                </ul>
+            </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="contents">
+        <h2 class="blind">슬라이드부분</h2>
+        <div class="container">
+            <section class="cont-top">
+            <h3 class="blind">main-slide</h3>
+                <!--main-slide-->
+                <article class="cbox column1">
+                    <div class="slideshow-container">
+                        <div class="slides fade">
+                            <div class="number">1 / 4</div>
+                            <div id="slider1"><img src="assets/img/slider/slider1.jpg"></div>
+                            <div class="text">Caption 1</div>
+                        </div>
+                        <div class="slides fade">
+                            <div class="number">2 / 4</div>
+                            <div id="slider2"><img src="assets/img/slider/slider3.jpg"></div>
+                            <div class="text">Caption 2</div>
+                        </div>
+                        <div class="slides fade">
+                            <div class="number">3 / 4</div>
+                            <div id="slider3"><img src="assets/img/slider/slider4.jpg"></div>
+                            <div class="text">Caption 3</div>
+                        </div>
+                        <div class="slides fade">
+                            <div class="number">4 / 4</div>
+                            <div id="slider4"><img src="assets/img/slider/slider2.jpg"></div>
+                            <div class="text">Caption 4</div>
+                        </div>
+                        <a class="prev" onclick="plusIndex(-1)">&#10094;</a>
+                        <a class="next" onclick="plusIndex(+1)">&#10095;</a>
+                        <div class="dots_id">
+                            <span class="dots" onclick="currentSlide(1)"></span>
+                            <span class="dots" onclick="currentSlide(2)"></span>
+                            <span class="dots" onclick="currentSlide(3)"></span>
+                            <span class="dots" onclick="currentSlide(4)"></span>
+                        </div>                
+                    </div>
+                </article>
+                <!--//main-slide-->
+            </section>
+            <section class="cont-middle">
+            <h3 class="blind">main-slide</h3>
+                <!--notice-->
+                <article class="cbox column2">
+                    <div class="notice-box">
+                        <!--notice-left-->
+                        <article class="notice-left">                        
+                        </article>
+                        <!--//notice-left-->
+                        <!--notice-right-->
+                        <article class="notice-right">
+                            <ul>
+                                <li><a href="#">
+                                    <i class="fa fa-binoculars" aria-hidden="true"></i>
+                                    <p>공지사항</p></a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-child" aria-hidden="true"></i>
+                                    <p>수강신청</p></a>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-cubes" aria-hidden="true"></i>
+                                    <p>공지사항</p></a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                    <p>수강신청</p></a>
+                                    </a>
+                                </li>
+                            </ul>
+                        </article>
+                        <!--//notice-right-->                        
+                    </div>
+                </article>
+                <!--//notice-->
+            </section>
+            <section class="cont-middle2">
+            <h3 class="blind">main-slide</h3>
+                <!--board-->
+                <article class="cbox column3">
+                    <div class="board">
+                        <!--board-left-->
+                        <div class="board-left">
+                            <a href="#"><h4>KIMSCHOOL Notice&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-right"></i></h4></a>
+                            <!--notice-table-->
+                            <div class="notice-table">
+                                <ul>
+                                    <li class="clearfix">
+                                        <ul>
+                                            <li class="notice-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="notice-date">2018.3.4</li>
+                                        </ul>
+                                    </li>
+                                    <li class="clearfix">
+                                        <ul>
+                                            <li class="notice-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="notice-date">2018.3.4</li>
+                                        </ul>
+                                    </li>                                   
+                                    <li class="clearfix">
+                                        <ul>
+                                            <li class="notice-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="notice-date">2018.3.4</li>
+                                        </ul>
+                                    </li>
+                                    <li class="clearfix">
+                                        <ul>
+                                            <li class="notice-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="notice-date">2018.3.4</li>
+                                        </ul>
+                                    </li>
+                                    <li class="clearfix">
+                                        <ul>
+                                            <li class="notice-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="notice-date">2018.3.4</li>
+                                        </ul>
+                                    </li>
+                                    <li class="clearfix">
+                                        <ul>
+                                            <li class="notice-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="notice-date">2018.3.4</li>
+                                        </ul>
+                                    </li>                                                                                                                
+                                </ul>
+                            </div> 
+                            <!--//notice-table-->                           
+                        </div>
+                        <!--//board-left-->
+                        <!--board-right-->
+                        <div class="board-right clearfix">
+                            <a href="#"><h4>학사일정&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-right"></i></h4></a>
+                            <!--schedule-table-->
+                            <div class="schedule-table">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li class="schedule-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="schedule-date">2018.3.4</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="schedule-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="schedule-date">2018.3.4</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="schedule-title">
+                                                공지사항제목입니다공지사항제목입니다
+                                            </li>
+                                            <li class="schedule-date">2018.3.4</li>
+                                        </ul>
+                                    </li>                                                                                                                
+                                </ul>
+                            </div> 
+                            <!--//scedule-table-->  
+                        <!--//board-right-->
+                    </div>
+                </div>
+                <!--/board-->
+            </section>
+            <section class="cont-middle3">
+            <h3 class="blind">main-slide</h3>
+                <!--gallery-->
+                <div class="gallery">
+                    gallery
+                </div>               
+                <!--//gallery-->
+            </section>
+            <section class="cont-middle4">
+            <h3 class="blind">main-slide</h3>
+                <!--gallery-->
+                <article class="cbox column5">
+                    <div class="about">
+                        <!--about-name-->
+                        <div class="about-name">
+                        <ul>
+                            <li>
+                                <i class="fab fa-gripfire"></i>
+                            </li>
+                            <li>
+                                <p>KIMSCHOOL ACADEMY</p>
+                            </li>
+                            <li>
+                                <i class="fab fa-gripfire"></i>
+                            </li>
+                        </ul>
+                        </div>
+                        <!--//about-logo-->           
+                        <!--about-logo-->
+                        <div class="about-logo">
+                        <ul>
+                            <li>
+                                <i class="fab fa-d-and-d"></i>
+                                <p>2018</p>
+                            </li>
+                            <li>
+                                <i class="fab fa-wizards-of-the-coast"></i>
+                                <p>32,552</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-hat-wizard"></i>
+                                <p>246,731</p>
+                            </li>
+                            <li>
+                                <i class="fab fa-critical-role"></i>
+                                <p>531</p>
+                            </li>
+                        </ul>
+                        </div>
+                        <!--//about-logo-->                  
+                    </div>
+                </article>
+                <!--//gallery-->
+            </section>
+            <section class="cont-bottom">
+            <h3 class="blind">main-slide</h3>
+                <!--gallery-->
+                <article class="cbox column6">
+                    <div class="quick-bottom">
+                        quick-bottom                     
+                    </div>
+                </article>
+                <!--//gallery-->
+            </section>
+        </div>
+    </section>
+    <nav id="nav">
+        <!--무조건 container로 묶자!!-->
+        <div class="container">
+            <!--row를 잘 활용하자 ! 양쪽 여백 붙는 것 방지해주는 놈! padding: 0 15px;-->
+            <div class="row">
+                <div class="nav clearfix">
+                    <h2>반응형 사이트 전체 메뉴</h2>
+                    <!--float속성을 준 '후'에는 clearfix(reset.css)를 주는 습관을 기르자 !-->
+                    <!--ul.clearfix>li*30>a[href="#"]{HTML Reference$} -->
+                    <ul>
+                        <li><a href="#">HTML Reference1</a></li>
+                        <li><a href="#">HTML Reference2</a></li>
+                        <li><a href="#">HTML Reference3</a></li>
+                        <li><a href="#">HTML Reference4</a></li>
+                        <li><a href="#">HTML Reference5</a></li>
+                        <li><a href="#">HTML Reference6</a></li>
+                        <li><a href="#">HTML Reference7</a></li>
+                        <li><a href="#">HTML Reference8</a></li>
+                        <li><a href="#">HTML Reference9</a></li>
+                        <li><a href="#">HTML Reference10</a></li>
+                        <li><a href="#">HTML Reference11</a></li>
+                        <li><a href="#">HTML Reference12</a></li>
+                        <li><a href="#">HTML Reference13</a></li>
+                        <li><a href="#">HTML Reference14</a></li>
+                        <li><a href="#">HTML Reference15</a></li>
+                        <li><a href="#">HTML Reference16</a></li>
+                        <li><a href="#">HTML Reference17</a></li>
+                        <li><a href="#">HTML Reference18</a></li>
+                        <li><a href="#">HTML Reference192</a></li>
+                        <li><a href="#">HTML Reference20</a></li>
+                        <li><a href="#">HTML Reference21</a></li>
+                        <li><a href="#">HTML Reference22</a></li>
+                        <li><a href="#">HTML Reference23</a></li>
+                        <li><a href="#">HTML Reference24</a></li>
+                        <li><a href="#">HTML Reference25</a></li>
+                        <li><a href="#">HTML Reference26</a></li>
+                        <li><a href="#">HTML Reference27</a></li>
+                        <li><a href="#">HTML Reference28</a></li>
+                        <li><a href="#">HTML Reference29</a></li>
+                        <li><a href="#">HTML Reference30</a></li>
+                    </ul>        
+                </div>                
+            </div>            
+        </div>
+    </nav>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer">
+                   <!--ul>li*7>a[href="#"]-->
+                   <ul>
+                       <li><a href="#">사이트 도움말</a></li>
+                       <li><a href="#">사이트 이용약관</a></li>
+                       <li><a href="#">사이트 운영원칙</a></li>
+                       <li><a href="#"><strong>개인정보취급방침</strong></a></li>
+                       <li><a href="#">책임의 한계와 법적고지</a></li>
+                       <li><a href="#">게시중단 요청서비스</a></li>
+                       <li><a href="#">고객센터</a></li>
+                   </ul>
+                   <address>
+                        <em>Copyright &copy;
+                        <a href="#"><strong>KIMSCHOOL</strong></a>
+                        All rights reserved.</em>
+                   </address>
+                </div>
+                <!--//.footer-->
+            </div>
+        </div>
+    </footer>
+
+
+
+
+   
+
+
+
+    
+   
+   
+   
+    <!--Script-->
+    <script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/main-slider.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+#wrap{width:100%; background-color: #EBEBED;}
+#header{}
+#contents{}
+#contents #cont1{}
+#contents #cont2{}
+#contents #cont3{}
+    
+
+#cont3 .container{border-bottom: 1px solid #eaeaea;}
+.container{width: 700px; height: inherit; background-color: rgba(255,255,255); margin: 0 auto;}
+
+/* header */
+.header{text-align: center; height: 90px; line-height: 90px; border-bottom: 1px solid #eaeaea;}
+.header h1{font-size: 31px;}
+
+/* cont1 */
+.cont1{width: 100%; height: 180px;}
+#joinform_dot{text-align: center;}
+.cont1 .joinform_dots{ margin : 30px 2px 0; width:6px; height: 6px; background-color: black; border-radius: 50%; display:inline-block;}
+.cont1 h1{font-size: 29px; margin-top:20px; font-weight: bold;}
+.cont1 p{font-size: 15px; margin-top:10px;}
+
+/* cont2 */
+/* jbox1 */
+.cont2{width: 90%; height: 203px; ; margin: 0 auto;}
+.cont2 .joinform_jbox1{border: 1px solid #eaeaea;}
+.cont2 .joinform_jbox1 .jbox1_tit{height: 51px;border-bottom: 1px solid #eaeaea;  font-size: 14px;}
+.cont2 .joinform_jbox1 .jbox1_desc{height: 132px; overflow-y: scroll ; }
+
+/* cont3 */
+/* jbox2 */
+.cont3{width: 90%; height: 363px; ; margin: 0 auto;  }
+.cont3 .joinform_jbox2{border: 1px solid #eaeaea; }
+.cont3 .joinform_jbox2 .jbox2_tit{height: 51px;border-bottom: 1px solid #eaeaea;  font-size: 14px;}
+.cont3 .joinform_jbox2 .jbox2_desc{height: 132px; overflow-y: scroll ; }
+
+/* jbox3 */
+.cont3 .joinform_jbox3{position: relative; text-align: center; background-color: #44421231; margin-top:30px;}
+.cont3 .joinform_jbox3 .jbox3_prev{position: absolute; text-align: left;}
+.cont3 .joinform_jbox3 .jbox3_prev a{display:inline-block; width:80px; height: 58px; line-height: 58px ;font-size: 11px; letter-spacing: -1px;}
+.cont3 .joinform_jbox3 .jbox3_prev i{padding-right: 12px}
+.cont3 .joinform_jbox3 .jbox3_next{position: absolute; left:50%; top:0;transform: translateX(-50%) ; background-color: #989898; }
+.cont3 .joinform_jbox3 .jbox3_next a{display:inline-block; width:190px; height: 58px; line-height: 58px ;font-size: 16px; letter-spacing: -1px; color:#fff}
+
+
+/* footer */
+.footer{
+    text-align: center; padding: 30px 50px;
+}
+
+.footer li{
+    display:inline;
+    padding: 0 7px;
+    position: relative;
+    white-space: nowrap;
+}
+.footer li:before{
+    content:'';
+    width:1px;
+    height: 9px;
+    background-color: #130707;
+    position: absolute;
+    top:4px;
+    left:0;
+}
+
+
+
+@media (max-width : 1280px){
+    .container {width: 100%}
+
+}
+@media (max-width : 1024px){
+
+}
+@media (max-width : 960px){
+    
+}
+@media (max-width : 768px){
+}
+@media (max-width : 600px){
+
+
+
+}
+@media (max-width : 480px){
+
+}
+@media (max-width : 320px){
+
+}

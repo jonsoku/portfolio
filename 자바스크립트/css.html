@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자바스크립트로 스타일링 하기</title>
+    <style>
+        #redSquare{transition: all 0.5s ease-in-out;width:200px; height: 200px ; background-color: red;margin:auto; margin-top:200px;;}
+        #transBut{width:100px; height: 40px; text-align: center; line-height: 40px; margin:auto; background:none; border:1px solid black; border-radius: 5px;}
+    </style>
+</head>
+<body>
+    <div id="redSquare">내용을 집어넣어주세요.</div>
+    <div id="transBut">뿅</div>
+    
+    <script>
+        console.log(redSquare.style);
+        
+        transBut.onclick = function(){
+            redSquare.style.background ="green"
+            redSquare.style.width ="300px"
+            redSquare.style.borderRadius ="50%"
+            redSquare.innerHTML ="녹색타원이야."
+            redSquare.style.textAlign ="center";
+            redSquare.style.lineHeight = "200px"
+        }
+
+
+
+
+    </script>
+</body>
+</html>

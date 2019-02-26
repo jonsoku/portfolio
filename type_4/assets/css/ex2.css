@@ -1,0 +1,777 @@
+/*폰트 모음*/
+
+/*font-family: 'Noto Sans KR', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+/*font-family: 'Do Hyeon', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+
+
+
+
+
+/*reset*/
+a{
+    text-decoration: none!important;
+    color: black!important;
+}
+
+
+
+
+/* layout */
+body{
+}
+
+#header{
+    width:100%;
+    height: 80px;
+    position:fixed;
+    z-index:300;
+}
+
+#contents{
+    padding-top:80px;
+}
+
+
+.container{
+    width: 1200px;
+    position:relative;
+    margin: 0 auto;
+}
+/* //layout */
+
+.column1{
+}
+
+.column2, .column3{
+    margin-bottom: 20px;
+}
+
+
+
+
+/* header */
+.header{
+    width: 100%;
+    /*임시 영역구분용*/
+    background-color: rgba(0, 11, 107, 0.8);
+    height: 80px;
+}
+
+/* //header */
+
+
+
+/*logo 이미지 영역*/
+.header .top-logo{
+    float:left;
+    width:200px;
+    height: 80px;    
+    margin-left:-20px;
+}
+/*top quick메뉴*/
+.quick{
+    display:inline;
+    float:right;
+    line-height: 80px;
+}
+.quick li{
+    float:left;
+    padding: 0 10px;
+}
+.quick a{
+    color: white!important;
+}
+
+
+
+/* main-slide */
+
+
+
+/* main-slide end*/
+
+/* notice */
+
+.notice{
+    width:100%;
+    /*임시 영역구분용*/
+    height: auto;
+}
+
+.notice-left{
+    width: 92%;
+    float:left;
+    /*영역지정용*/
+    min-height: 320px;
+    height: auto;
+
+}
+.notice-right{
+    margin-left:92%;
+    height: auto;
+    width: 8%;
+}
+.notice-right li{
+    border : 1px solid white;
+    box-sizing: border-box;   
+    background-color: #dbdbdb;
+    text-align: center;
+    min-height: 80px;
+    height: auto;
+    font-size: 12px;
+}
+
+
+.notice-right li i{
+    color: rgba(0, 11, 107, 0.7);
+    font-size: 35px;
+    padding-top: 15px;
+}
+
+
+.notice-right i:hover{
+    color: rgba(0, 11, 107, 1);
+}
+
+
+/* notice-slide  */
+   
+.notice-slide{
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+.notice-slides{
+    display:none;
+}
+
+.notice-number{
+    position: absolute;
+    font-size: 23px;
+    color:black;
+    text-align: center;
+    width:50%;
+    left:50%;
+    top: 20%;
+
+}
+
+.notice-text{
+    position: absolute;
+    font-size: 18px;
+    color: black;
+    width:50%;
+    left:50%;
+    top:40%;
+}
+
+.notice img{        
+    width: 50%;
+    min-height: 320px;
+    height: auto;
+}
+
+.notice-dots_id{
+    position: absolute;
+    left:71%;
+    top:85%;
+}
+.notice-dots{
+    opacity: 1;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #dbdbdb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.notice-fade{
+    animation-name: notice-fade;
+    animation-duration:0.2s;
+}
+
+@keyframes notice-fade{
+    from{opacity: 0.4}
+    to{opacity: 1}
+}
+
+.notice-active ,.notice-dots:hover{
+    background: rgba(0, 11, 107, 0.8);
+}
+
+
+/* notice end */
+
+/* board */
+
+.board{
+    width:100%;
+    /*임시 영역구분용*/
+    height: auto;
+    clear: both;
+}
+
+.board-left{
+    width: 60%;
+    height: auto;
+    float:left;
+    /*영역지정용*/
+}
+.board-right{
+    height: auto;
+    margin-left:60%;
+    
+}
+
+/* board-left (Notice) */
+
+.cbox-tit{
+    font-size: 30px;
+    font-weight: 550;
+}
+.cbox-desc{
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.board-left table{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.board-left tr{
+    height: 55px;
+}
+
+.board-left table td:nth-child(3){
+    text-align: center;
+}
+.board-left table a{
+    font-size: 18px;
+}
+.hot{
+    width: 25px;
+    height: 100%;
+    background-color: red;
+    color:white;
+    text-align: center;
+    margin : 0 auto;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+
+.cbox-colum1{
+    position: relative;
+}
+.slider-logo{
+    position: absolute;
+    left:30px;
+    top:50px;
+}
+
+.slider-logo1{
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+.slider-logo2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 60px;
+    color: rgb(28, 31, 189)
+}
+.slider-logo3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: rgb(28, 31, 189)
+}
+
+/* board-right */
+
+.schedule{
+    min-height: 280px;
+    height: 230px;
+    overflow-y: scroll;
+    border-left: 1px solid black;
+    
+}
+.schedule li{
+    padding: 0 0 20px 20px;
+}
+
+/* board end */
+
+/* gallery */
+
+/*
+gallery{
+    overflow: hidden ;
+}줘도 된다!! 난 clearfix사용할꺼임 ~!
+*/
+
+.gallery a{
+    position: relative;    
+    float: left;
+    width: 19%;
+    margin: 0.5%;
+}
+
+.gallery a:before{
+    content : '';
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: all .3s ease;
+    z-index:100;
+    background: rgba(110, 111, 114, 0.5);
+    padding: 5px 3px;
+    color: white;
+    border-radius: 5px;
+}
+.gallery a:hover:before{
+    opacity: 1;
+}
+
+.gallery a img:hover{filter: blur(1px);}
+.gallery a:nth-child(1):before {content: '#JAVA'}
+.gallery a:nth-child(2):before {content: '#SPRING'}
+.gallery a:nth-child(3):before {content: '#PHP'}
+.gallery a:nth-child(4):before {content: '#HTML'}
+.gallery a:nth-child(5):before {content: '#CSS'}
+.gallery a:nth-child(6):before {content: '#JAVASCRIPT'}
+.gallery a:nth-child(7):before {content: '#Python'}
+.gallery a:nth-child(8):before {content: '#Nodejs'}
+.gallery a:nth-child(9):before {content: '#Laravel'}
+.gallery a:nth-child(10):before {content: '#jQuery'}
+
+/* gallery end */
+
+
+/* about */
+
+.about {
+    position: relative;
+    width:100%;
+    /*임시 영역구분용*/
+    min-height: 400px;
+    height: auto;
+}
+
+.about-img{    
+    width:100%;
+    /*임시 영역구분용*/
+    min-height: 400px;
+    height: auto;
+    background-image: url('../img/about.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.about-cover{
+    width: 100%;
+    min-height: 400px;
+    background-color: black;
+    opacity: 0.4;
+    position: absolute;
+
+}
+
+.about-student{
+    width: 100%;
+    min-height: 400px;
+    position: absolute;
+    text-align: center;
+    color:white;
+    font-size: 50px;
+    font-family: 'Do Hyeon', sans-serif;
+    padding-top: 70px;
+}
+
+.about-logo{
+    width: 100%;
+    min-height: 400px;
+    position: absolute;
+    text-align: center;
+}
+
+.about-logo p{
+    color: white;
+}
+
+.about-logo ul{
+    display: inline-block;
+    margin-top: 170px;
+}
+
+.about-logo li{
+    float: left;
+    padding : 0 70px;
+}
+.about-logo{
+    color: white;
+}
+.about-logo i{
+    color: white;
+}
+
+.about-logo p{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.about-logo i{
+    font-size: 100px;
+}
+/* about end */
+
+
+/* banner */
+
+.banner{
+    width:100%;
+    /*임시 영역구분용*/
+    height: 60px;
+    background-color: rgba(0, 11, 107, 0.8);
+    color : #dbdbdb;
+    line-height: 60px;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+}
+.nav-banner-btn{
+    float:left;
+    width:50%;
+}
+.nav-link-btn{
+    float:left;
+    width:50%;
+}
+
+#nav{
+    display:none;
+
+}
+
+.nav{
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 11, 107, 1);
+    bottom:60px;
+    text-align: left;
+    font-size: 12px;
+    text-align: center;
+
+}
+.nav h2{
+    font-size: 20px;
+}
+
+.nav-banner{
+    display:inline-block;
+    width:30%;
+    min-height: 300px;
+    max-height: 500px;
+    height: 400px;
+    margin-right: 80px;
+}
+
+.nav-banner h3{
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 20px;
+    font-weight: 900;
+}
+.nav-banner li a{
+    color: white!important;
+    font-size: 16px;
+}
+
+.nav-link{
+    display:inline-block;
+    min-height: 300px;
+    max-height: 500px;
+    height: 400px;
+    width:30%;
+    margin-left: 80px;
+
+}
+.nav-link li a{
+    color: white!important;
+    font-size: 16px;
+}
+
+
+.nav-link h3{
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* banner end */
+
+
+.youtube{
+    overflow: hidden;
+}
+
+
+.ybox1{
+    float:left;
+    width:50%;
+}
+.ybox2{
+    float:left;
+    width:50%;
+}
+
+
+.ybox iframe{
+    border:0;
+    width:100%;
+    height: 400px;
+}
+
+
+/* footer */
+/* footer 중 가운데영역 */
+.footer{
+    text-align: center; padding: 30px 50px;
+}
+
+.footer li{
+    display:inline;
+    padding: 0 7px;
+    position: relative;
+    white-space: nowrap;
+}
+.footer li:before{
+    content:'';
+    width:1px;
+    height: 10px;
+    background-color: #130707;
+    position: absolute;
+    top:5px;
+    left:0;
+}
+.footer li:first-child::before{
+    width:0;
+}
+
+
+
+
+
+
+
+
+        /* mediaquery 항상 제일 밑에 있어야한다. */
+        /* 1280px 960px 768px 600px 480px 320px*/
+@media(max-width: 1280px) {
+    .container{width:100%;}
+}
+@media(max-width: 1024px){
+    .gallery a{
+    
+        float: left;
+        width: 32.2%;
+        margin: 0.5%;
+    }
+    
+}
+
+
+
+@media(max-width: 960px) {
+
+    .about-logo li{
+        padding : 0 40px;
+    }   
+
+
+}
+
+@media(max-width: 768px) {
+
+
+
+
+    .about-logo li{
+        float: left;
+        padding : 0 30px;
+    }
+
+    #header{
+        position:static;
+    }
+    #contents{
+        padding-top:0px;
+    }
+    .gallery a:last-child{
+    
+        display:none;
+    }
+
+
+
+
+    
+  
+}
+
+@media(max-width: 600px) {
+
+
+    .quick{
+        display: none;
+    }
+
+    .notice-left{
+        width: 100%;
+        height: 500px;
+        /*영역지정용*/
+    }
+    .notice-right{
+        width:100%;
+        height: 100px;
+        margin-left:0%;  
+        clear:both;  
+    }
+
+
+    .notice-number{
+        position: absolute;
+        font-size: 17px;
+        color:black;
+        text-align: center;
+        width:100%;
+        left:0%;
+        top: 120%;
+    
+    }
+    
+    .notice-text{
+        position: absolute;
+        font-size: 12px;
+        color: black;
+        width:100%;
+        left:0%;
+        top:140%;
+    }
+    
+    .notice img{        
+        width: 100%;
+        min-height: 250px;
+        height: auto;
+    }
+    .notice-dots_id{
+        position: absolute;
+        left:50%;
+        transform: translate(-50%,-50%);
+        top:190%;
+    }
+
+    .notice li{
+        float:left;
+        width: 25%;
+        height: auto;
+        min-height: 100px;
+    }
+
+    .board-left{
+        width: 100%;
+        height: auto;
+        float:none;
+        /*영역지정용*/
+    }
+
+
+    .board-right{
+        height: 200px;
+        margin-left:0%;
+        overflow: scroll;
+    
+    }
+
+    .schedule{
+        border-left: 0;
+        
+    }
+
+    .about{
+        display:none;
+    }
+
+
+    .nav-banner{
+        display:inline-block;
+        width:30%;
+        margin-right: 30px;
+    }
+    .nav-link{
+        display:inline-block;
+        width:30%;
+        margin-left: 30px;
+    }
+    .nav h3{
+        font-size: 16px;
+    }
+    .nav li a{
+        font-size: 12px;
+    }
+    .sns{
+        width: 10%;
+    }
+    .sns i{
+        font-size: 20px;
+    }
+    .gallery a{
+        display:none;
+    }
+    .gallery a:first-child{
+    
+        float: left;
+        width: 100%;
+        margin: 0.5%;
+        display: block;
+    }
+    .slider-logo{
+        left:5px;
+        top:10px;
+    }
+    
+    .slider-logo1{
+        font-size: 14px;
+    }
+    .slider-logo2{
+        font-size: 35px;
+    }
+    .slider-logo3{
+        font-size: 15px;
+    }    
+
+    .ybox1{
+        float:none;
+        width:100%;
+    }
+    .ybox2{
+        display: none;
+    }
+    
+    
+    .ybox iframe{
+        border:0;
+        width:100%;
+        height: 400px;
+    }
+
+
+}
+@media(max-width: 480px) {}
+@media(max-width: 320px) {}

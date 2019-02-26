@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+/* font-family: "Noto Sans KR", sans-serif; 100,300,400,500,700,900 */
+/*font-family: 'Song Myung', serif;*/
+@import url("https://fonts.googleapis.com/css?family=Song+Myung");
+/*font-family: 'Jua', sans-serif;*/
+@import url("https://fonts.googleapis.com/css?family=Jua");
+@font-face { font-family: 'NEXEN_TIRE_Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/NEXEN_TIRE_Regular.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+
+.container {
+  width: 1200px;
+  height: inherit; /*background-color: rgba(155, 138, 219, 0.377)*/;
+  margin: 0 auto;
+  -webkit-text-size-adjust: none;
+
+  -webkit-transition: width 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-transform: width 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -ms-transform: width 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transform: width 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: width 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+body {
+}
+
+#wrap {
+  background-color: #7f2145;
+}
+#header {
+}
+#banner {
+}
+#contents {
+}
+#contents .cont1 {
+}
+#contents .cont2 {
+
+}
+#contents .cont3 {
+
+}
+#footer {
+
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 100%;
+  }
+
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 960px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 600px) {
+    .cbox.cbox2 .teacher-desc .teacher-can li h5{width:100px; padding:5px;}
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 320px) {
+}

@@ -1,0 +1,831 @@
+/*font-family: 'Nanum Brush Script', cursive;*/
+@import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script');
+
+
+
+/* layout */
+body{
+    background-color: #f1f4fb;
+}
+
+#header {
+    background: url('../img/ex-top.jpg') no-repeat center top;
+}
+
+/*nav 접기/열기 부분 */
+#nav{display:none;}
+#nav.show{display:block;}
+/**/
+
+#tit{
+}
+
+#tit .container{
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #fff;
+
+}
+
+#contents{
+
+}
+
+#contents .container{
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+}
+
+/* 화면상으로는 left - center - right 순으로 정렬되어있지만 
+    영역 자체는 center(전체영역)위에 float:left한 left와
+    absolute로 center위에 right가 덮혀져있는 상태..
+    left와 right값에 margin-top 과 top값을 조절해보면 
+    확인할 수 있다.
+    > cont-left
+    margint-top: 10px;
+    > cont-right
+    top: -10px;
+    
+    1. left영역에 center영역 지우기
+    이것을 해결하기 위해선 clearfix 와 overflow:hidden의 방법이 있다.
+    하지만 clearfix하기위해선 부모영역이 존재해야하는데, 존재하지않으므로
+    불가능!
+    그러므로 center에 overflow:hidden을 주어 밖으로 
+    빠져나간(left영역의 center 부분)곳을 잘라낸다.
+    -> left부분 해결!
+
+    2. right영역에 center영역 지우기
+    right가 영역이 없기때문에 (absolute) 나타나는 현상
+    이것은 right width값 만큼 center에서 margin-right:(right width) 만큼
+    해주면 된다.
+
+    => 영역을 조절해보면 center만 줄어든다. 이유는 left,right에 
+        width값 250px을 정의해주었기 때문에 width값이 없는(auto)
+        center값만 변하는 것이다.
+*/
+#cont-left{
+    float:left;
+    width: 250px;
+    /* 가상으로 height값을 준다. (확인용) */
+    /*height: 500px;*/
+    /* 초기 영역 구분용도 : background-color: #666;*/
+
+}
+
+/* 전체 width값이 600px이 되었을 때 center를 밑으로 내리는방법
+    => mediaquery
+    =>  @media(max-width:600px){
+            #cont-left{
+                float:none;
+                width: 100%;
+            }
+            #cont-center{
+                width: 100%;
+            }
+        }
+    => cont-left의 float:left를 풀어주면 한줄 영역처리가 되기때문에.
+    => cont-left의 width:250px을 주었기 때문에 width값을 100%로 변경한다.
+*/
+
+
+#cont-center{
+    /* 사이트 제작 시 최소 크기를 남겨놓고 제작 => 나중에 삭제 */
+    /*background-color: #888;*/
+    /* left영역에 center영역 지우기 (뒤쪽) */
+    overflow: hidden;
+    /* 초기 영역 구분용도 : right center영역 지우기 (뒤쪽) 
+    margin-right : cont-right의 width값 */
+    margin-right: 250px;
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+
+}
+
+/* 전체 width값이 960px이 되었을 때 right값을 밑으로 내리는방법
+    => mediaquery
+    =>  @media(max-width:960px){
+            #cont-right{
+                position: static;
+                width: 100%;
+            }
+            #cont-center{
+                margin-right: 0;
+            }
+        }
+*/
+#cont-right{
+    width: 250px;
+    /* 가상으로 height값을 준다. (확인용) */
+    /*height: 500px;*/
+    /* 초기 영역 구분용도 : background-color: #999;*/
+    /*center 오른쪽에 붙히는 방법...
+    나중에 창 크기가 줄어들면 absolute를 해제하여 밑으로 이동시킨다. */
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+/* footer 중 전체영역 */
+#footer{
+    width: 100%;
+    height: 200px;
+    /* 초기 영역 구분용도 : background-color: yellowgreen; */
+
+}
+
+/* container */
+.container{
+    width: 1200px;
+    margin : 0 auto;
+    /* 영역 확인
+    background: rgba(0,0,0,0.3);
+    */
+    position: relative;
+}
+
+
+/*
+■■■■■■■■■■■■■■■■■■(영역) border 잡는 순서■■■■■■■■■■■■■■■■■■
+사전작업 : contents부분의 배경색을 지운다. 
+1. 
+#footer{
+    border-top: 1px solid #dbdbdb;
+}
+
+2.
+#cont-center{
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+}
+
+3.
+#contents .container{
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+}
+
+4.
+#tit{
+    border-bottom: 1px solid #dbdbdb;
+}
+
+5.
+일정영역이 되면 좌/우 스크롤이 생기는 현상 
+=> border값 좌/우 합 2px이 먹어서 생기는현상임
+=> mediaquery에서 특정 width값에서 border값을 지우면 된다.
+=> 여기에선 max-width값 1280px에서 #contents .container의 border값을 지운다.
+   * 어차피 딱 붙는 형태라서 border값이 필요없으므로 지운것임!
+
+6. 
+max-width:1280px에서 
+스크롤현상 제거 좌/우 border값 삭제
+@media(max-width:1280px){
+    #contents .container{
+        border:0;
+    }
+}
+
+7.
+max-width: 960px에서 
+cont-right가 밑으로 내려왔을 때, 구분선(top부분) 설정
+@media(maw-width:960px){
+    #cont-center{
+        border-right: 0; --> 추가한다. 
+    }
+    #cont-right{
+        border-top: 1px solid #dbdbdb;
+    }
+}
+
+8.
+max-width: 600px에서
+cont-center가 밑으로 내려왔을 때, 구분선(top부분) 설정
+@media(max-width: 600px){
+    #cont-center{
+        width: 100%;
+        border-left: 0;
+        border-top: 1px solid #dbdbdb;
+    }
+}
+
+9.
+left center right 안쪽의 각각의 article에 구분선 짓기.
+.cbox{
+    padding: 15px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+10.
+제일 마지막 박스들에 border-bottom값이 적용되므로
+footer에 border-top: 1px solid #dbdbdb;를 적용시킨 것과
+중복현상이 발생!!! 
+=> left,center,right 의 마지막 박스에  border-bottom: 0px; 적용
+=> 여기에선 각각 3개씩 박스가 형성되어있으니..
+.cbox.column3{
+    border-bottom: 0px;
+}
+.cbox.column6{
+    border-bottom: 0px;
+}
+.cbox.column9{
+    border-bottom: 0px;
+}
+=> left,center,right 에 박스를 놓는 갯수에따라 
+달라지므로 유의할 것 !
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+
+
+/* quick (우측 상단 퀵메뉴) */
+.quick{
+    text-align: right;
+}
+.quick a{
+    font-size:12px;
+    display: inline-block;
+    color:#fff;
+    padding: 5px 0 0 10px;
+    transition: all 0.3s ease;
+}
+.quick a:hover {
+    color: #ccc;
+}
+
+/* title */
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 100px;
+    
+}
+.title p{
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 900;
+    background-color: #fc636b;
+    color:#fff;
+    padding: 10px 12px 10px 12px;
+}
+.title h1{
+    font-size: 12px;
+    margin-top: -7px;
+}
+.title h1 a{
+    font-size:14px;
+    display: inline-block;
+    color:#fff;
+    background-color: #ffc168;
+    padding: 5px 16px 5px 12px;
+}
+
+/* icon-font */
+.icon-font{
+    text-align: center;
+    margin-top: 41px; 
+    padding-bottom: 45px;
+}
+/* float:left로 정렬하는 것이 아닌 display: inline으로 정렬하면 
+text-align:center 를 사용할 수 있다.*/
+.icon-font li{
+    display: inline;
+    margin: 0 3px;
+    position: relative;
+}
+.icon-font li a{
+    /*inline기능을 가진 block*/
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #fc636b;
+    color: white;
+    font-size: 35px;
+    border-radius: 50%;
+
+
+}
+.icon-font li a .tool{
+    position: absolute;
+    font-size:12px;
+    /*li태그 width값 60px 의 절반인 30px부터 시작된다. */
+    left:50%;
+    top:-70px;
+    transform: translateX(-50%);
+    background-color: #fc636b;
+    border-radius: 10px;
+    padding : 1px 7px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.icon-font li a:hover .tool{
+    opacity: 1;
+    top: -60px;
+}
+.icon-font li a .tool:before {
+    content: "";
+    position: absolute;
+    bottom:-5px;
+    left:50%;
+    transform: translateX(-50%);
+    /* 삼각형 만들기 */
+    border-top: 5px solid #fc636b;
+    /*trasparent : 투명하게 만든다 (영역은 살아있음)*/
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+.icon-font li a:hover{
+    box-shadow: 
+    0 0 0 3px rgba(233, 128, 128, 0.9) inset,
+    0 0 0 100px rgba(33,33,33,0.1) inset;
+}
+
+
+/* nav */
+.nav{
+    padding: 30px 0;
+}
+.nav h2{
+    font-size: 16px; color:#fbb034;
+}
+.nav li{
+    position: relative;
+    float: left; 
+    width: 24.2%;
+    padding-left: 6px;
+    
+}
+.nav li:before{
+    content:'';
+    position: absolute;
+    width:3px;
+    height: 3px;
+    background-color: black;
+    left: 0;
+    top: 8px;
+    border-radius: 50%;
+    /*padding margin값이 안으로 들어간다. */
+    box-sizing: border-box;
+}
+.nav li a{
+    padding: 3px;
+    border-radius: 2px;
+}
+.nav li a:hover{
+    background-color: #fbb034;
+    color: #fff;
+}
+
+
+/* tit */
+
+.tit{
+    text-align: center;
+}
+.tit h2{
+    font-size: 39px;
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ecb731;
+}
+.tit .btn{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 35px;
+}
+.tit .btn a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #fc636b;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    line-height: 30px;
+}
+.tit .btn a i{
+}
+
+/* cbox */
+/*공통적인 부분
+상위박스에 width값이 지정되어있으므로 padding값을 넣어도 깨지지않음
+*/
+.cbox{
+    padding: 15px;
+    border-bottom: 1px solid #dbdbdb;
+}
+/* 각 박스 title 설정 */
+.cbox .cbox-tit{
+    font-size: 20px;
+    color: #ffc719;
+}
+
+.cbox .cbox-desc{
+    border-bottom : 1px dashed #dbdbdb;
+    /* 안쪽 여백을 준다. */
+    padding-bottom: 10px;
+    /* 바깥쪽 여백을 준다. */
+    margin-bottom: 10px;
+}
+.cbox.column1{
+
+}
+.cbox.column2{
+    
+}
+.cbox.column3{
+    border-bottom: 0px;
+}
+.cbox.column4{
+    
+}
+.cbox.column5{
+    
+}
+.cbox.column6{
+    border-bottom: 0px;
+}
+.cbox.column7{
+    
+}
+.cbox.column8{
+    
+}
+.cbox.column9{
+    border-bottom: 0px;
+}
+
+
+/* MENU */
+.menu li{
+    border-bottom: 1px solid #dbdbdb;
+    position: relative;
+}
+.menu li a{
+    color: #404041;
+    text-transform: uppercase;
+    /* 글자와 i(아이콘) 사이의 간격이 떨어져도..하나로 만들어줌. */
+    display: block;
+    padding: 10px 0 10px 0;
+    transition: all .3s ease;
+}
+.menu li a:hover{
+    color: #969696;
+    text-decoration: none;
+}
+.menu li i{
+    position: absolute;
+    right:10px;
+    /* 정 가운데로 위치하는것.. */
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+
+/* NOTICE */
+.notice{
+    position: relative;
+}
+.notice h5{
+    font-size: 14px; 
+    color:#ffdd00;
+}
+/*li값은 box사이즈에 너비가 이미 정해져있으므로.. */
+.notice li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    padding-left:6px;
+
+}
+.notice li:before{
+    content:'';
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fbb034;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+.notice li a {
+    font-size: 10px;
+}
+.notice .more{
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
+/*banner*/
+.banner{
+    position: relative;
+}
+.banner .whc{
+    position: absolute;
+    right: 0;
+    top:3px;
+    text-transform: uppercase;
+    font-size: 9px;
+}
+.banner .student-name{
+    font-weight: 900;
+}
+.banner h5:after{
+    content:' 학생';
+    font-size: 10px;
+    color:6a737b;
+}
+.banner .banner-desc{
+    font-size: 9px;
+}
+.banner .banner-img{
+    position: relative;
+    display:block;
+    background-color: #000;
+    overflow:hidden;
+}
+/* img 확대 효과 상위 박스에 overflow:hidden을 줘야 안넘치고 넘친부분은 잘림 */
+.banner .banner-img img{
+    transform: scale(1, 1); transition:all 0.3s ease-in-out;
+}
+.banner .banner-img:hover img{
+    transform: scale(1.5, 1.5);    
+}
+/* img위에 background-color입히는 방법 */
+.banner .banner-img:after{
+    content:'';
+    position: absolute;
+    left:0;
+    top:0;
+    display: block;
+    background-color: rgba(0,0,0,0);
+    width:100%;
+    height: 100%;
+    z-index:50;
+    transition: background-color 0.3s ease-in-out;    
+}
+
+.banner .banner-img:hover:after{
+    background-color: rgba(0,0,0,0.6);
+}
+
+.banner .banner-img em{
+    position: absolute;
+    left:0;
+    top:50%;
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top:-8px;
+    font-size:0;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;   
+}
+.banner .banner-img:hover em{
+    opacity: 1;
+    font-size: 12px;
+}
+
+/* square */
+.square{
+
+}
+.square{position: relative; width: 100%; }
+.square a {position: relative;float:left; width: 19%; margin:0.5%}
+.square a:before{content: 'image'; position: absolute; left: 50%; top:50%;
+transform: translate(-50%, -50%); opacity: 0; transition:all 0.2s ease-in-out; 
+color:white; padding: 5px 10px; background: rgba(0,0,0,0.5); border-radius: 3px; z-index:100;}
+.square a:hover:before{ opacity: 1; }
+.square a:nth-child(1):before{content: '#Python';}
+.square a:hover:nth-child(1) img{filter: blur(1px); }
+.square a:nth-child(2):before{content: '#JAVA';}
+.square a:hover:nth-child(2) img{filter: blur(1px); }
+.square a:nth-child(3):before{content: '#PHP';}
+.square a:hover:nth-child(3) img{filter: blur(1px); }
+.square a:nth-child(4):before{content: '#CSS';}
+.square a:hover:nth-child(4) img{filter: blur(1px); }
+.square a:nth-child(5):before{content: '#HTML';}
+.square a:hover:nth-child(5) img{filter: blur(1px); }
+.square a:nth-child(6):before{content: '#NODE.js';}
+.square a:hover:nth-child(6) img{filter: blur(1px); }
+.square a:nth-child(7):before{content: '#Ajax';}
+.square a:hover:nth-child(7) img{filter: blur(1px); }
+.square a:nth-child(8):before{content: '#jQuery';}
+.square a:hover:nth-child(8) img{filter: blur(1px); }
+.square a:nth-child(9):before{content: '#javascript';}
+.square a:hover:nth-child(9) img{filter: blur(1px); }
+.square a:nth-child(10):before{content: '#Laravel';}
+.square a:hover:nth-child(10) img{filter: blur(1px); }
+
+
+/*video */
+.video{position: relative; width: 100%; padding-bottom: 56.25%; }
+.video .iframe {width: 100%; height: 100%; position: absolute; bottom:0;} 
+
+/* rotate 잡기능 ! */
+.rotate {
+    position: relative;
+}
+.rotate a{
+    display:block; 
+    text-align: center;
+    color:white;
+    perspective: 600px;
+}
+.rotate a .front{
+    transform : rotateX(0deg) rotateY(0deg);
+    transition: all 0.3s ease-in-out;
+    backface-visibility: hidden;
+}
+.rotate a .back{
+    background-color: #fbb034;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+    transform : rotateX(0deg) rotateY(-180deg);
+    transition: all 0.3s ease-in-out;
+    backface-visibility: hidden;
+
+}
+.rotate a:hover .front{
+    transform : rotateX(0deg) rotateY(180deg);
+}
+.rotate a:hover .back{
+    transform: rotate(0deg) rotateY(0deg); z-index: 1;
+}
+
+
+/* rotate2 */
+.rotate2{position: relative;perspective: 500px;}
+.rotate2 img{display: block;}
+.rotate2:after{
+    content:''; background-color: rgba(255,255,255,0.8);
+    position: absolute;
+    left:10%;
+    top:7%;
+    right:10%;
+    bottom:7%;
+    display: inline-block;
+    transform: rotateX(90deg);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+.rotate2:hover:after{
+    transform:rotateX(0deg);
+    opacity: 1;
+
+}
+
+/* footer */
+/* footer 중 가운데영역 */
+.footer{
+    text-align: center; padding: 30px 50px;
+    border: 1px solid #dbdbdb;
+}
+
+.footer li{
+    display:inline;
+    padding: 0 7px;
+    position: relative;
+    white-space: nowrap;
+}
+.footer li:before{
+    content:'';
+    width:1px;
+    height: 10px;
+    background-color: #dbdbdb;
+    position: absolute;
+    top:5px;
+    left:0;
+}
+.footer li:first-child::before{
+    width:0;
+}
+
+
+
+
+
+/* mediaquery 항상 제일 밑에 있어야한다. */
+/* 1280px 960px 768px 600px 480px 320px*/
+@media(max-width: 1280px){
+    .container{width:100%;}
+    .row{padding: 0 15px;}
+    /*좌우측 padding값*/
+    .tit .btn{margin-right: 15px;}
+    #contents .container{border:0;}
+}
+@media(max-width: 1024px){
+    .nav li {width:24%}
+}
+@media(max-width: 960px){
+    #cont-right{
+        position: static;
+        width: 100%;
+    }
+    #cont-center{
+        margin-right: 0;
+        border-right: 0;
+    }
+    #cont-right{
+        border-top: 1px solid #dbdbdb;
+    }
+    /* 4개로 넣기*/
+    .square a{
+        width: 24%;
+    }
+    /* 잘려진 사진 지우기 */
+    .square a:last-child{
+        display:none;
+    }
+    .square a:nth-last-child(2){
+        display:none;
+    }
+}   
+@media(max-width: 768px){
+    .nav li{width: 32.4%;}
+    }   
+
+
+@media(max-width: 600px){
+    .title{display:none;}    
+    .icon-font{display:none;}
+    .nav{display: none;}
+    .tit .btn{display: none;}
+    #cont-left{
+        float:none;
+        width: 100%;
+    }
+    #cont-center{
+        width: 100%;
+        border-left: 0;
+        border-top: 1px solid #dbdbdb;
+    }
+    .cbox.column1{padding:0; border-bottom: 0;}
+    .cbox.column1 .cbox-tit{display:none;}
+    .cbox.column1 .cbox-desc{display:none;}
+    .cbox.column1 .menu li a i{display:none;}
+    /* 부모속성 이웃속성 등과 겹칠 때 */
+    .cbox.column1 menu ul{overflow: hidden;}
+    .cbox.column1 .menu li{
+        float: left; 
+        width: 33.33333%;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        /* border값으로 인해 영역이 흐트러졌을때 */
+        box-sizing: border-box;
+        text-align: center;   
+        background-color: #efdf00;     
+    }
+    .cbox.column1 .menu li a{
+        text-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    #tit{
+        border-bottom: 0;
+    }
+    /* 마지막 메뉴가 삐져나와 보기가싫어서 임시로 넣음 */
+    .cbox.column1 .menu li:last-child{
+        width: 100%;
+        border-right: 0;
+    }
+    .cbox.column1 .menu li:nth-child(3n){
+        border-right: 0;
+    }
+    /* 3개로 넣기*/
+    .square a{
+        width: 32%;
+    }
+     /* 잘려진 사진 지우기 */
+    .square a:nth-last-child(2){
+        display:block;
+    }
+    .column3 {
+        display:none;
+    }
+    
+    
+}
+@media(max-width: 480px){
+    
+    
+}
+@media(max-width: 320px){
+    .square a{
+        width: 98%;
+    }
+    .square a:nth-child(n){
+        display: none;
+    }
+    .square a:first-child{
+        display: block;
+    }
+
+
+
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rion{width:100px; position: absolute; left: 50%; top:50%;}
+        *{list-style: none; margin:0; padding:0;}
+        .slide img{width:980px; height: 390px; margin:0; padding:0;}
+        /*
+        .slide {width:980px; height: 390px;overflow: hidden;}
+        .slide ul {width:3980px; background-color: #fff; }
+        .slide ul li{float:left; width:980px; height: 390px;}
+        */
+
+    </style>
+</head>
+<body>
+    <img src="dancing_rion.gif" id="rion"/> 
+
+        <h2 id="index-lable"></h2>
+        <h1 id="title-lable"></h1>
+        <div class="slide">
+            <ul>
+                <li data-title="가나다"><a href="#"><img src="img/slide4.jpg"></a></li>
+                <li data-title="라마바"><a href="#"><img src="img/slide6.jpg"></a></li>
+                <li data-title="사아차"><a href="#"><img src="img/slide5.jpg"></a></li>
+                <li data-title="카타파"><a href="#"><img src="img/slide7.jpg"></a></li>
+            </ul>
+        </div>
+
+        <script>
+            
+            var slide = document.querySelectorAll(".slide");
+            console.log(slide);
+            var length = document.querySelectorAll(".slide li").length;
+            console.log(length);
+            var slide_ul = document.querySelectorAll(".slide ul");
+            console.log(slide_ul);
+            var slide_li = document.querySelectorAll(".slide li");
+            console.log(slide_li);
+
+            var width = 980+"px";
+            var height = 380+"px";
+
+
+            for(var i=0; i<slide.length; i++){
+                var item = slide.item(i);
+                item.style.width = width;
+                item.style.height = height;
+                item.style.overflow = "hidden";
+
+            }
+
+            for(var i=0; i<slide_ul.length;i++){
+                var item = slide_ul.item(i);
+                item.style.width = 980*length+"px";
+            }
+            
+
+            for(var i=0; i<slide_li.length;i++){
+                var item = slide_li.item(i);
+                item.style.width = width;
+                item.style.height = height;
+                item.style.cssFloat = "left";   
+            }
+
+
+
+
+            function moveTo(index){
+                index = index || 0;
+                index = index % length;
+                for(var i=0; i<slide_ul.length;i++){
+                    var item = slide_ul.item(i);
+                    item.style.marginLeft = (-980 * index) +"px";
+                }
+
+                
+                // for(var j = 0 ; j<slide_li.length; j++){
+                //     dots[j].style.backgroundColor = "blue";
+                //     console.log(dots[j]);
+                // }
+
+                
+                
+
+                // btn[index].setAttribute("style", "background-color: blue");
+                // btn[index].style.width = "100px";
+                // btn[index].style.height = "100px";
+                
+                // btn.setAttribute("style", "background-color: red");
+                // btn.style.width = "100px";
+                // btn.style.height = "100px";
+                
+                
+
+
+
+                
+                    
+                     
+            }
+
+
+            
+
+            for(let i = 0 ; i < length  ; i++){
+                
+                var btn = document.createElement("input");
+                btn.setAttribute('type','button');
+                var btn2 = document.body.appendChild(btn);
+                btn2.setAttribute('onClick',"moveTo("+i+")");                
+                //btn2.setAttribute('onClick',"alert("+i+")");
+                btn2.setAttribute('class','dots');
+                btn2.style.width ="100px";
+                btn2.style.height = "100px";
+                btn2.style.backgroundColor = "red";
+
+
+
+            }
+            var dots = document.querySelectorAll('.dots');
+            for(let i = 0 ; i <length ; i++){
+                dots.style.backgroundColor ="black";
+            }
+
+            var currentIndex = 0;
+            setInterval(function(){
+                currentIndex += 1;
+                moveTo(currentIndex)
+            }, 1000 * 1.5)
+
+
+                // var length = document.querySelectorAll(".slide li").length;
+                // var width = 980;
+                // var height = 380;s
+
+                // var slide = document.querySelectorAll(".slide");
+                // slide.style.width = width;
+                // slide.style.height = height;
+                // slide.style.overflow = "hidden";
+
+                // var slide_ul = document.querySelectorAll(".slide ul");
+                // slide_ul.style.width = width * length;
+
+                // var slide_li = document.querySelectorAll(".slide li");
+                // slide_li.style.width = width;
+                // slide_li.style.height = height;
+                // slide_li.style.float = "left";
+
+
+
+
+        </script>
+        
+
+</body>
+</html>

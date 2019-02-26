@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body h2{color:powderblue; background-color: coral;}
+        .onlinegame{font-weight: bold;}
+        body span{font-size:20px;}
+        #first{color:green;}
+    </style>
+
+</head>
+<body>
+
+    <h1><a href='#'>WEB</a></h1>
+    <h2>JavaScript</h2>
+    <p>
+        <div class='onlinegame'>온라인 게임</div>의 경우에는 <span id="first">운영하는 기간</span>이 길어질수록 더미 데이터는 쌓이게 되는 법이다.[3] 던전 앤 파이터만 해도 미사용 데이터가 삭제되지 않고 본섭에 들어와서는 묻히는 경우가 종종 생긴다. 또는 과거에 사용했던 데이터가 그대로 남아있는 경우도 있다. 예를 들어 남성 레인저의 1차 각성기의 이펙트 이미지가 변경되었는데 과거 이미지를 냅두고 남성 런처의 2차 각성기도 과거 쓰던 난사 모션으로 레이저를 휘두를 때의 레이저 이펙트와 레이저 캐논 도트가 그대로 남아있다. 또한 이벤트로 나온 다차원 소녀의 모험의 맵 오브젝트 중 상하 이동 포탈 역할을 하는 이미지가 있다든지 무한 난이도 업뎃 당시 폐기되어 없어진 진 고대 던전에 대응하는 무한 난이도 관련 이미지 데이터가 있다든지 등이 있다. 던파의 더미, 삭제 데이터를 전문적으로 분석하는 블로거가 있다는 것만 봐도 잘 알 수 있다. 간혹 가다 클라이언트의 용량이 클 수록 명작 게임이고 작을 수록 망겜이라고 하는 사람도 있는데, 게임의 질적 퀄리티는 클라이언트 용량과는 단 눈꼽만큼도 전혀 상관없는 법이다. 오히려 온라인 게임의 최적화는 썩 좋지 못한데도 클라이언트의 용량이 쓸데없이 크다면 그 게임의 퀄리티를 의심해야 할 정도.... 다만 게임의 퀄리티에 큰 차이가 없을 때, 더미 데이터가 많다는 것은 나름대로 오랫동안 살아남아 운영했을 가능성이 크다... 정도의 의미는 있겠다.
+    </p>
+    <button onclick="night()">night</button>
+    <button onclick="day()">day</button>
+    <input type="button" id="night_day" value="night" onclick="night_day()">
+    <input type="button" id="night_day" value="night" onclick="night_day_refactoring()">
+    
+
+    
+    <script>
+        
+        
+
+        function night(){
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('body').style.backgroundColor ='black';
+        }
+        function day(){
+            document.querySelector('body').style.color = 'black';
+            document.querySelector('body').style.backgroundColor ='white';
+        }
+        function night_day(){
+            //value값을 알아내는 방법 
+            if(document.querySelector('#night_day').value === 'night'){
+                document.querySelector('body').style.color = 'white';
+                document.querySelector('body').style.backgroundColor ='black';
+                document.querySelector('#night_day').value = 'day';
+            }else{
+                document.querySelector('body').style.color = 'black';
+                document.querySelector('body').style.backgroundColor ='white';
+                document.querySelector('#night_day').value = 'night';
+            }            
+        }
+
+        function night_day_refactoring(){
+            var target = document.querySelector('body');
+            var night_day = document.querySelector('#night_day');
+
+            if(night_day.value === 'night'){
+                target.style.color = 'white';
+                target.style.backgroundColor = 'black';
+                night_day.value = 'day';
+            }else{
+                target.style.color = 'black';
+                target.style.backgroundColor = 'white';
+                night_day.value = 'night';
+            }
+            
+        }
+
+    </script>
+
+</body>
+</html>

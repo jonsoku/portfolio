@@ -1,0 +1,72 @@
+/* layout */
+body{
+    background-color: #dbdbdb;
+}
+
+#header{
+    width:100%;
+    height: 80px;
+    background-color: rgba(0,0,0,0.5);
+    position:fixed;
+}
+
+.container{
+    width: 1200px;
+    position:relative;
+    margin: 0 auto;
+}
+
+/* header */
+.header{
+    width: 100%;
+    /*임시 영역구분용*/
+    background-color: rgba(0,0,0,0.6);
+    height: 80px;
+}
+
+/*logo 이미지 영역*/
+.header .top-logo{
+    float:left;
+    width:200px;
+    height: 80px;    
+}
+
+/*top quick메뉴*/
+.quick{
+    display:inline;
+    float:right;
+    line-height: 80px;
+}
+.quick li{
+    float:left;
+    padding: 0 10px;
+}
+.quick a{
+    color: white;
+}
+
+/*contents영역*/
+#main-slide{
+    /*header fix값이 있으므로 fix높이값만큼 내려준다*/
+    padding-top:80px;
+}
+
+
+
+
+
+        /* mediaquery 항상 제일 밑에 있어야한다. */
+        /* 1280px 960px 768px 600px 480px 320px*/
+@media(max-width: 1280px) {.container{width:100%;}}
+
+        @media(max-width: 1024px) {}
+
+        @media(max-width: 960px) {}
+
+        @media(max-width: 768px) {}
+
+        @media(max-width: 600px) {}
+
+        @media(max-width: 480px) {}
+
+        @media(max-width: 320px) {}

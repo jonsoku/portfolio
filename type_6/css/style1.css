@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+/* font-family: "Noto Sans KR", sans-serif; 100,300,400,500,700,900 */
+
+
+#header{}
+#nav{}
+#banner{width:100%; height: 400px; background: yellow;}
+#contents{width: 100%;height: 600px; background-color: #555;}
+#footer{width: 100%;height: 200px; background-color: #777;}
+
+/* container */
+.container{width: 900px;height: inherit; ;background-color: rgba(0,0,0,0.4); margin: 0 auto;position: relative;}
+
+
+/* header */
+.header{overflow: hidden;width:100%; background: ivory;}
+.header_logo{float:left;  }
+.header_menu{float:right;overflow: hidden;}
+.header_menu li{position: relative;text-align:center;float:left; display:block;}
+.header_menu li:before{position: absolute; left:0; top:16px;content:''; width:1px; height: 8px; background-color: #dbdbdb;}
+.header_menu li a{font-size:11px; display:block; height:40px; line-height: 40px; padding:0 5px;}
+.header_menu li:first-child:before{background: none;}
+
+/* nav */
+.nav{overflow:hidden;width:100%; background: olive;}
+.nav .nav_menu{overflow: hidden;}
+.nav .nav_menu{float:left;overflow: hidden;}
+.nav .nav_menu li{padding:20px 0;text-align:center;float:left;;position:relative; width:110px;}
+.nav .nav_menu li:first-child:before{content:'';position: absolute;left:0px;bottom:0;width:110px; height: 2px; background-color: black;}
+.nav .nav_menu li a{display:block; font-size: 13px; font-weight: 900; padding:0 6px;}
+.nav h2{float:right; padding:20px 5px;}
+
+/*banner*/
+#banner .container{width:1000px;}
+.banner{position: relative; z-index:999;}
+.banner .ban_img{}
+.banner .ban_notice{position: absolute; top:415px; left:140px; text-align: center;}
+.banner .ban_notice a{display:block; width:120px; height: 40px; line-height: 40px; font-weight: 700; border:1px solid black;}
+.banner .ban_square{overflow: hidden; position: absolute;top:330px; right:0; height: 140px;}
+.banner .sq{position:relative;text-align:left;float:left;width:120px; height: 120px; background-color: #fff; margin: 0 20px; 
+    box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.445);
+
+}
+.banner .sq p{font-size: 16px; padding-top:10px; padding-left: 10px;}
+.banner .sq span{position: absolute;right:20px; bottom:15px;font-size:35px;}
+.banner .ban_square .sq1{}
+.banner .ban_square .sq2{}
+.banner .ban_square .sq3{}
+.banner .ban_square .sq4{}

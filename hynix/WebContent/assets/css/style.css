@@ -1,0 +1,204 @@
+/* web font */
+/*font-family: 'Roboto', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+
+/*  layout  */
+#wrap{}
+#header{height: 95px;}
+#banner{height: 609px;overflow: hidden;}
+#contents{}
+#footer{}
+
+
+/* container */
+/* inherit : 상위 값에게 상속 받는다. */
+.container{width:1020px; margin: 0 auto; height: inherit; /*background: rgba(1,125,123,0.2)*/;}
+
+/* contents layout */
+#contents1{}
+#contents2{background-color: #f7f7f7 ;}
+#contents3{}
+#contents4{background-color: #f7f7f7 ;}
+#contents5{}
+.footer_top{background-color: #f7f7f7 ;}
+
+
+/* header */
+.header{overflow: hidden;}
+/*이미지만 딱 붙히기 위해 float:left를 적용 */
+.header h1{float: left;width: 160px; margin-top: 20px; }
+.header .nav{float: left;width: 600px;  margin-top: 40px}
+/*li(한줄)일때는 그냥 inline이 편함 */
+.header .nav li{display: inline; padding: 0 20px;}
+/* font-size는 a태그한테 사용 */
+.header .nav li a{font-size: 15px;font-weight: bold; text-transform: uppercase; letter-spacing: 0.025em;}
+.header .nav_icon{float: right; margin-top: 30px;}
+/*li(한줄)일때는 그냥 inline이 편함 */
+.header .nav_icon li{float:left; width:47px; text-align: center;margin-left: 10px;}
+.header .nav_icon li a{color:#767676; display:block;}
+.header .nav_icon li a i{font-size: 20px;}
+.header .nav_icon li span{display: block;}
+.header .nav_icon li a:hover{color:#ea5d4b;}
+
+
+/* banner */
+#banner{position: relative;}
+#banner .banner_icon{position: absolute; left: 0; bottom: 0; width: 100%; height: 67px; background-color: rgb(215,94,80,0.6);}
+#banner .banner_icon ul{overflow:hidden}
+/*float:left를줘도 text-align주는 이유는 밑에 자식들에게 적용하기 위해서*/
+#banner .banner_icon li{float: left; width:25%; text-align: center; padding-top: 14px;}
+#banner .banner_icon li a{ color: white;}
+#banner .banner_icon li a i{font-size: 20px;}
+#banner .banner_icon li a span{display:block;}
+
+/* investor */
+.investor{text-align: center; padding: 60px 0 70px 0;}
+.investor h2{font-size: 26px; }
+.investor p{color: #666; margin:20px 0 36px 0;}
+
+/* investor_box */
+.investor .investor_box{overflow: hidden;}
+.investor .investor_box .ileft{float:left; width: 400px; height: 300px; }
+.investor .investor_box .iright{float:left; width: 620px; height: 300px; border-left: 1px solid #eaeaea; box-sizing: border-box}
+.investor .investor_box .iright ul{overflow:hidden;}
+.investor .investor_box .iright li{float: left;width: 33.3333%; margin-top: 30px;}
+
+.investor .investor_box .iright li a:hover{color: #555;}
+.investor .investor_box .iright li a i {color: #ec7768; font-size: 30px; background-color: #f3f3f3; padding: 10px; border-radius: 50%; width: 40px;height: 40px; line-height: 40px;}
+.investor .investor_box .iright li a span{display:block; font-size: 14px; color: #555; padding-top:10px;}
+
+/* corporate */
+.corporate{text-align: center; padding: 60px 0 70px 0;}
+.corporate h2{font-size: 26px; }
+.corporate p{color: #666; margin:20px 0 36px 0; line-height: 26px;}
+
+.corporate_box{text-align: left; border-top: 1px solid #eaeaea; padding-top: 50px;}
+.corporate_box ul{overflow: hidden;  }
+.corporate_box li{position: relative;;float: left; width: 210px; margin: 0 30px 0 20px; height: 120px; padding-left: 80px;}
+
+.corporate_box li a{text-align: center;}
+.corporate_box li a i{position: absolute; left:0; top:0;font-size: 30px; background-color: #ea5d4b; color: #fff; width: 60px;height: 60px;line-height: 60px;border-radius: 50%;}
+.corporate_box li a strong{display:block; text-align: left; font-size: 14px; padding-bottom: 5px;}
+.corporate_box li a span{display:block;text-align: left; color: #666; font-size: 12px; list-style: 20px;}
+.corporate_box li a:hover strong{color: #222;}
+.corporate_box li a:hover span{text-decoration: none;}
+
+
+/* product */
+
+.product{padding: 60px 0 70px 0;}
+.product h2{text-align: center; font-size: 26px; padding-bottom: 30px;}
+
+.product .product_box{overflow: hidden;}
+.product .product_box .column{height: 300px; float: left; width: 320px; margin: 0 10px 20px 10px;}
+
+.product .product_box .column a:hover h3{text-decoration: underline; color: #222}
+.product .product_box .column a:hover p{text-decoration: none!important; color: #222}
+.product .product_box .column h3{ margin-top: 21px; font-weight: bold; font-size: 16px; line-height: 24px; color: #252525;}
+.product .product_box .column p{margin-top: 12px;padding-bottom: 7px;line-height: 20px;color: #555;}
+
+/* Blog */
+.blog{overflow: hidden; padding: 60px 0 70px 0;}
+.blog h2{text-align: center; font-size: 26px; padding-bottom: 30px;}
+.blog div{overflow: hidden; float: left; width:320px; margin: 0 10px;}
+.blog div a{position: relative; display: block; height: 200px; }
+.blog div a span{position: absolute; left:0; bottom:0; background-color: rgba(0,0,0,0.7); padding: 10px; width: 300px; color:#fff; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;}
+.blog img{width: 100%}
+
+/* Global */
+.global{padding: 60px 0 70px 0;}
+.global h2{text-align: center; font-size: 26px; padding-bottom: 30px;}
+.global .glink{text-align: center;}
+.global .glink li{ display: inline; padding:0 10px; font-weight: 900; background:url(../../img/hynix/vline1x8.gif) no-repeat 0 4px;}
+.global .glink li:first-child{background: none;}
+.global .global_map{background: url(../../img/hynix/img_globalmap.png) no-repeat;}
+
+.global .global_map .gmlink{text-align: center;  margin-top: -80px;}
+.global .global_map .gmlink li{display:inline;}
+.global .global_map .gmlink li a{padding: 10px; border: 1px solid #c6c6c6; border-radius: 2px; width:148px;display:inline-block;}
+.global .global_map .gmlink li:last-child a{color:#ea5d4b;}
+
+/* li에 클래스가 active일때 a에 적용시킨다. */
+.global .global_map .gmlink li.active a{background-color: #ea5d4b; color:#fff}
+
+
+/*footer_top*/
+.footer_top{overflow: hidden;}
+.footer_top .ft-left{overflow:hidden; float:left; width: 510px; height: 225px; border-right: 1px solid #d7d7d7; box-sizing: border-box;}
+.footer_top .ft-left h3{padding-top:22px; }
+.footer_top .ft-left li{float: left; width:50%;}
+.footer_top .ft-left li a{color: #666; font-size: 12px; line-height: 20px; background: url(../../img/hynix/bul_gray_square.gif) no-repeat 0 6px; padding-left:8px;}
+
+.footer_top .ft-right{overflow:hidden; float:left; width: 510px; height: 225px;}
+.footer_top .ft-right .ft-right-left{float:left; width:50%;} 
+.footer_top .ft-right .ft-right-left h3{padding-left:20px;padding-top: 22px;}
+.footer_top .ft-right .ft-right-left ul{padding-left:20px;}
+.footer_top .ft-right .ft-right-left li a{color: #666; font-size: 12px; line-height: 20px; background: url(../../img/hynix/bul_gray_square.gif) no-repeat 0 6px; padding-left:8px;}
+.footer_top .ft-right .ft-right-right{float:left; width:50%;}
+.footer_top .ft-right .ft-right-right h3{padding-top: 22px;}
+.footer_top .ft-right .ft-right-right li a{color: #666; font-size: 12px; line-height: 20px; background: url(../../img/hynix/bul_gray_square.gif) no-repeat 0 6px; padding-left:8px;}
+.footer_top .ft-right .ft-right-right li.ft-right-right-banner a{background: none;padding-left:0;}
+.footer_top .ft-right .ft-right-right li.pt10 {padding-top: 10px;}
+
+/*footer_bom*/
+.footer_bom{overflow:hidden; width: 100%; padding: 20px 0;}
+.footer_bom address{float:left; color:#555; font-size: 12px;line-height: 19px;}
+.footer_bom .w3c{float:right; width:10%;}
+.footer_bom address span{display:block; font-size: 11px; color:#767676;line-height: 18px;}
+
+
+/* sub_banner */
+.sub_banner{}
+.sub_banner .visual{height: 256px; }
+.sub_banner .visual.about{background: url(../../img/hynix/visual_about.jpg) no-repeat center top;}
+.sub_banner .visual h2{color: #fff; font-size: 45px; text-transform: uppercase; font-weight: normal; line-height: 256px;}
+
+.sub_banner .breadcrumb{overflow:hidden; height: 48px; line-height: 48px; background-color: #eaeaea;}
+.sub_banner .breadcrumb .path{float:left;}
+.sub_banner .breadcrumb .path li{display:inline;}
+.sub_banner .breadcrumb .path li i{padding-right:15px;}
+
+.sub_banner .breadcrumb .path a{color:#333; padding-right: 5px; font-size: 14px;}
+.sub_banner .breadcrumb .path a i{padding-left:5px;}
+
+
+
+.sub_banner .breadcrumb .sns{float:right;}
+.sub_banner .breadcrumb .sns li{display:inline-block; width:52px; margin-left: 0.1px; background-color: #d6d6d6;  text-align: center;}
+.sub_banner .breadcrumb .sns li a{width:52px; display:block; font-size: 22px;}
+/* class명을 나누면 관리가 편하다. */
+.sub_banner .visual.products{background: url(../../img/hynix/visual_products.jpg) no-repeat center top;}
+
+/* cont_title */
+.cont_title{padding: 50px 0 40px 0;text-align: left;}
+.cont_title .container{ border-bottom: 1px solid #edecec; padding-bottom: 50px;}
+/*왼쪽에 이미지 | 오른쪽에 글씨 나올때는 이미지에 절대값을 주고 글자는 패딩값으로 조절하는 것이 제일 편함*/
+/* cont_title 기본값 */
+.cont_title .ct-box{position:relative;width:150px; height: 63px;margin: 0 auto; padding-left:73px;}
+.cont_title .ct-box h3{font-size:36px; line-height: 43px;}
+.cont_title .ct-box em{ display:block; font-size: 12px; color:#767676; text-transform: uppercase;line-height: 20px; letter-spacing: 1px;}
+.cont_title .ct-box i{position: absolute; left:0;top:0; background-color: #EB6655; font-size: 33px; width: 60px; height: 60px; color:white;text-align: center;line-height: 60px; border-radius: 50%; }
+
+
+/* contents */
+/* contents p 기본값 */
+.contents p{font-size: 14px;line-height: 22px; color:#555;}
+.contents h4{font-size: 30px; position: relative; padding-bottom: 20px;}
+.contents h4:before{position: absolute;content:'';width:30px;height: 2px; background-color:#eb6655;}
+
+/*column-box */
+.column-box{overflow: hidden;}
+.column-box .column{float:left;}
+.column-box .w50{width:50%;height: 400px;}
+
+
+/* table */
+.table-style1{border-top: 2px solid #474e6b;}
+.table-style1 th{border-bottom: 1px solid #c6c6c6; color: #484848; background-color: #f8f8f8;}
+.table-style1 td{border-bottom: 1px solid #c6c6c6; padding: 10px;}
+.table-style1 tr{}
+
+/* table 초기화 */
+table{width: 100%; border-spacing: 0; border-collapse: collapse;}
